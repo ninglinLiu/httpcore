@@ -277,7 +277,7 @@ class AsyncHTTP2Connection(AsyncConnectionInterface):
 
     async def _send_end_stream(self, request: Request, stream_id: int) -> None:
         """
-        Send an empty data frame on on a given stream ID with the END_STREAM flag set.
+        Send an empty data frame on a given stream ID with the END_STREAM flag set.
         """
         self._h2_state.end_stream(stream_id)
         await self._write_outgoing_data(request)
